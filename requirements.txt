@@ -2,3 +2,5 @@ streamlit
 wordcloud
 plotly
 openpyxl
+option_menu
+Sastrawi
