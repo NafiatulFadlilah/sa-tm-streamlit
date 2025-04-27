@@ -2,5 +2,10 @@ streamlit
 wordcloud
 plotly
 openpyxl
-option_menu
-Sastrawi
+streamlit-option-menu
+pandas
+matplotlib
+wordcloud
+pyldavis
+scikit-learn
+sastrawi
