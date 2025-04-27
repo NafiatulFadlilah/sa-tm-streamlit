@@ -2,22 +2,88 @@ import streamlit as st
 import pandas as pd
 import os
 import pickle
+
+from streamlit_option_menu import option_menu
+
+# untuk menggunakan fungsi yang ada di processing.py
 from utils.processing import preprocess_comments, clean_text
+
+# untuk menggunakan fungsi yang ada di loader.py
+from utils.loader import load_alay_dictionary, load_stopwords
+
 from pathlib import Path
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 import plotly.express as px
 
-# --- SIDEBAR NAVIGATION ---
-st.sidebar.title("📊 Sentiment Analysis App")
-page = st.sidebar.radio("Navigasi", ["🏠 Home", "📝 Klasifikasi Sentimen", "📂 Pemodelan Topik"])
+# --- LOAD RESOURCE ---
+# kamus alay
+alay_dict = load_alay_dictionary(
+    kamusalay_filepath = os.path.join("data", "kamusalay2.csv"),
+    additional_filepath = os.path.join("data", "additional_dict-alay.csv")
+)
 
-# --- PAGE: HOME / DASHBOARD ---
-if page == "🏠 Home":
+# stopwords
+stopwords = load_stopwords(
+    stopwords_filepath= os.path.join("data", "stopwordbahasa.csv"),
+    additional_stopwords=["lah", "nya", "kalau", "the", "of", "and", "i", "aku", "gue", "kak",
+    "kamu", "a", "to", "ku", "rela", "kakak", "eh", "for", "did", "is", "ah", "cui", "nge"],  # extend manual
+    excluded_stopwords=["tidak", "kok", "serta", "peserta", "harus", "lagi", "dong", "doang", 
+    "tolong", "kenapa", "apa", "kapan", "bagaimana", "dimana", "berapa", "tahun", "ada", "mana", 
+    "siapa", "terus", "penerus", "gitu", "begitu", "gini", "begini","bisa", "dapat", "ingin", 
+    "mungkin", "jadi", "atur", "pengaturan", "sudah", "udah","diri", "sendiri", "memang", "agak", 
+    "sedikit", "kurang", "boleh", "juga", "kembali", "balik", "soal", "ya","sudah", "ingin", 
+    "tanya", "saja", "pada", "ayo", "keluar", "lalu", "tiap","hari", "bulan", "kalau", "kalian", 
+    "masih", "kira", "masalah", "sekarang", "belum", "pasti", "sebelum", "sesudah", "terlalu", 
+    "lebih", "tangis", "pernah", "satu", "dua", "tiga", "empat", "lima", "enam", "tujuh", 
+    "delapan", "sembilan", "sepuluh", "sebelas", "season", "lain"]   # exclude
+)
+
+# --- SIDEBAR NAVIGATION dengan option_menu ---
+with st.sidebar:
+    selected = option_menu(
+        "Menu", ["Home", "Klasifikasi Sentimen", "Pemodelan Topik"],
+        icons=['house', 'clipboard-check', 'files'],
+        menu_icon="cast", default_index=0, 
+        styles={
+            "container": {
+                "padding": "5px", 
+                "background-color": "#1E1E1E",  # sidebar background
+            },
+            "icon": {
+                "color": "#C0C0C0",  # soft grey icon
+                "font-size": "18px"
+            }, 
+            "nav-link": {
+                "font-size": "16px",
+                "text-align": "left",
+                "margin": "2px",
+                "font-family": "Helvetica",
+                "color": "#CCCCCC",  # font abu muda
+                "background-color": "#2C2C2C",  # tombol background
+                "border-radius": "8px"
+            },
+            "nav-link-hover": {
+                "background-color": "#3E3E3E",  # hover background lebih terang sedikit
+                "color": "#FFFFFF",
+            },
+            "nav-link-selected": {
+                "background-color": "#0E76A8",  # warna biru saat aktif
+                "font-size": "16px",
+                "font-family": "Helvetica",
+                "color": "white",
+                "border-radius": "8px",
+            }
+        }
+    )
+
+# --- HALAMAN ---
+if selected == "Home":
+    # halaman dashboard home
     st.title("📊 Dashboard Sentimen Komentar")
-
-    data_path = Path("D:/Kuliah/SEMESTER 8/App/sa-tm-streamlit/data/dataset_penelitian.xlsx")
-    if data_path.exists():
+    # konten
+    data_path = os.path.join("data", "dataset_penelitian.xlsx")
+    if os.path.exists(data_path):
         df = pd.read_excel(data_path)
 
         # --- Pra-pemrosesan awal ---
@@ -28,12 +94,10 @@ if page == "🏠 Home":
         st.subheader("📌 Statistik Umum")
         total_komentar = df["comment"].count()
         total_user = df["username"].nunique()
-        total_like = df["likeCount"].sum()
 
-        col1, col2, col3 = st.columns(3)
+        col1, col2 = st.columns(2)
         col1.metric("Total Komentar", total_komentar)
         col2.metric("Total Pengguna", total_user)
-        col3.metric("Total Like", total_like)
 
         # --- 2. Proporsi Sentimen ---
         st.subheader("📊 Distribusi Sentimen")
@@ -48,12 +112,7 @@ if page == "🏠 Home":
                             title="Tren Jumlah Komentar Harian per Sentimen")
         st.plotly_chart(fig_trend)
 
-        # --- 4. Top 5 Pengguna Aktif ---
-        st.subheader("👥 Top 5 Pengguna dengan Komentar Terbanyak")
-        top_users = df["username"].value_counts().head(5)
-        st.bar_chart(top_users)
-
-        # --- 5. Komentar dengan Like Terbanyak ---
+        # --- 4. Komentar dengan Like Terbanyak ---
         st.subheader("👍 Komentar Paling Disukai")
         top_liked = df.sort_values(by="likeCount", ascending=False).head(5)[["username", "comment", "likeCount"]]
         for idx, row in top_liked.iterrows():
@@ -62,12 +121,19 @@ if page == "🏠 Home":
             _"{row['comment']}"_
             """)
 
-        # --- 6. Wordcloud per Sentimen ---
+        # --- 5. Wordcloud per Sentimen ---
         st.subheader("☁️ Wordcloud Kata Umum per Sentimen")
 
+        cleaned_data_path = os.path.join("data", "after_preprocessing.xlsx")
+        df_clean = pd.read_excel(cleaned_data_path)
+
+        # Mapping label angka ke teks
+        label_mapping = {0: "Negatif", 1: "Netral", 2: "Positif"}
+        df_clean["label_text"] = df_clean["label"].map(label_mapping)
+
         for label_name in ["Positif", "Netral", "Negatif"]:
-            text = " ".join(df[df["label_text"] == label_name]["comment"].astype(str).tolist())
-            wordcloud = WordCloud(width=800, height=300, background_color="white").generate(text)
+            text = " ".join(df_clean[df_clean["label_text"] == label_name]["after"].astype(str).tolist())
+            wordcloud = WordCloud(width=800, height=300, background_color="black").generate(text)
 
             st.markdown(f"**{label_name}**")
             fig, ax = plt.subplots(figsize=(10, 3))
@@ -76,13 +142,12 @@ if page == "🏠 Home":
             st.pyplot(fig)
 
     else:
-        st.warning("File dataset_penelitian.xlsx belum ditemukan di folder data.")
+        st.error(f"File {data_path} belum ditemukan di folder data.")
 
-
-# --- PAGE: KLASIFIKASI SENTIMEN ---
-elif page == "📝 Klasifikasi Sentimen":
+elif selected == "Klasifikasi Sentimen":
+    # halaman klasifikasi sentimen
     st.title("📝 Klasifikasi Sentimen Komentar")
-
+    # konten
     uploaded_file = st.file_uploader("Upload file komentar (format Excel)", type=["xlsx"])
     if uploaded_file:
         df = pd.read_excel(uploaded_file)
@@ -107,11 +172,12 @@ elif page == "📝 Klasifikasi Sentimen":
                 with open(output_file, "rb") as f:
                     st.download_button("⬇️ Unduh Hasil Klasifikasi", f, file_name="hasil_klasifikasi.xlsx")
 
-# --- PAGE: PEMODELAN TOPIK ---
-elif page == "📂 Pemodelan Topik":
-    st.title("📂 Hasil Pemodelan Topik (LDA)")
-
-    html_path = "topic_modeling/lda_viz.html"
+elif selected == "Pemodelan Topik":
+    # halaman pemodelan topik
+    st.title("📚 Hasil Pemodelan Topik (LDA)")
+    # konten
+    st.subheader("👍🏼 Hasil Pemodelan Topik Komentar Positif")
+    html_path = os.path.join("data", "output_lda_pos.html")
     if os.path.exists(html_path):
         with open(html_path, "r", encoding="utf-8") as f:
             html_content = f.read()
@@ -119,3 +185,12 @@ elif page == "📂 Pemodelan Topik":
     else:
         st.warning("File HTML hasil pemodelan topik tidak ditemukan.")
 
+    st.subheader("👎🏼 Hasil Pemodelan Topik Komentar Negatif")
+    html_path = os.path.join("data", "output_lda_neg.html")
+    if os.path.exists(html_path):
+        with open(html_path, "r", encoding="utf-8") as f:
+            html_content = f.read()
+        st.components.v1.html(html_content, height=800, scrolling=True)
+    else:
+        st.warning("File HTML hasil pemodelan topik tidak ditemukan.")
+    
