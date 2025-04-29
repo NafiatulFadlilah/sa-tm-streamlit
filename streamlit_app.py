@@ -184,6 +184,31 @@ elif selected == "Pemodelan Topik":
         st.components.v1.html(html_content, height=800, scrolling=True)
     else:
         st.warning("File HTML hasil pemodelan topik tidak ditemukan.")
+    
+    st.subheader("📝 Interpretasi Topik Positif")
+    
+    st.markdown("""
+    **Topik 1: Dukungan terhadap Program & Harapan Lanjutan**  
+    > Penonton sangat mengapresiasi acara ini karena memberikan inspirasi dan motivasi belajar, terutama kepada anak-anak Indonesia. 
+      Mereka merasa bahwa guru dan pengajaran dalam program ini menarik.  
+      Ada harapan agar acara seperti ini terus berlanjut, dan penonton menantikan episode selanjutnya.  
+      Sentimen positif juga muncul dari rasa terima kasih atas tayangan ini yang menginspirasi untuk belajar lebih giat.
+
+    ---
+
+    **Topik 2: Apresiasi Umum & Semangat Kompetisi**  
+    > Penonton menunjukkan apresiasi tinggi terhadap para peserta, khususnya Kadit dan tim lainnya, karena penampilan mereka yang dianggap keren, hebat, dan membanggakan. 
+      Ada nuansa emosional juga, seperti merinding dan sedih saat eliminasi, namun tetap memberi semangat dan dukungan. 
+      Penonton merasa terinspirasi oleh semangat peserta yang tetap semangat dan terus berjuang.
+                
+    ---
+
+    **Topik 3: Dukungan untuk Peserta & Atmosfer Persaingan**  
+    > Fokus penonton tertuju pada dukungan personal terhadap peserta seperti Shakira, Axel, dan Sandy, yang mereka anggap tampil luar biasa. 
+      Ada semangat kompetisi yang sportif, terlihat dari dukungan untuk yang menang maupun yang kalah. 
+      Penonton memuji mental yang kuat dan sikap tenang para peserta, serta merasa puas dengan hasil pertandingan yang jujur dan fair. 
+      Atmosfer kompetitif yang positif menjadi daya tarik tersendiri bagi penonton.
+    """)
 
     st.subheader("👎🏼 Hasil Pemodelan Topik Komentar Negatif")
     html_path = os.path.join("data", "output_lda_neg.html")
@@ -194,3 +219,54 @@ elif selected == "Pemodelan Topik":
     else:
         st.warning("File HTML hasil pemodelan topik tidak ditemukan.")
     
+    st.subheader("📝 Interpretasi Topik Negatif dan Rekomendasi Perbaikannya")
+
+    st.markdown("""
+    **Topik 1: Kritik Penilaian dan Performa**
+    > Ada ketidakpuasan pada soal/penilaian, atau menganggap hasil eliminasi tidak adil.   
+    > Rekomendasi: Pastikan sistem penilaian transparan dan bisa dipahami oleh penonton umum.
+    
+    ---
+    
+    **Topik 2: Spoiler & Kurangnya Kepuasan**
+    > Penonton merasa terganggu dengan spoiler (mungkin dari komentar atau media sosial), konten kurang greget, atau terlalu banyak iklan.   
+    > Rekomendasi: Batasi spoiler di komentar dengan filter otomatis, dan perhatikan proporsi konten dibanding iklan.
+
+    ---
+
+    **Topik 3: Keluhan terhadap Durasi & Jadwal Tayang**
+    > Penonton merasa kesal karena episode baru keluar terlalu lama, durasinya tanggung, dan menunggu terlalu lama setiap minggunya.   
+    > Rekomendasi: Pertimbangkan mempercepat jadwal rilis atau memberikan pengumuman jadwal tayang yang jelas agar ekspektasi penonton terkelola. 
+    
+    ---
+                
+    **Topik 4: Kekecewaan terhadap Keputusan & Peserta**
+    > Penonton kecewa pada keputusan juri atau produser, dan perasaan sayang terhadap peserta yang tidak lolos.   
+    > Rekomendasi: Berikan ruang kepada penonton untuk menyampaikan dukungan (misalnya vote atau polling), dan beri apresiasi kepada peserta yang gugur.
+    
+    ---
+    
+    **Topik 5: Ketidakterimaan Hasil Pertandingan**
+    > Banyak yang tidak puas dengan hasil (terutama kekalahan peserta favorit), atau merasa peserta yang menang terlalu sombong.  
+    > Rekomendasi: Berikan penjelasan hasil pertandingan secara adil dan highlight sportivitas.
+
+    ---
+    
+    **Topik 6: Keluhan Teknis & Alur Acara**
+    > Beberapa penonton merasa terganggu dengan teknis seperti video tidak bisa diunduh, gantung ceritanya, dan acara terasa "tidak teratur".   
+    > Rekomendasi: Perhatikan teknis penyajian (seperti kualitas video & alur cerita), dan pertimbangkan menyediakan recap atau versi ringkas.
+                
+    ---
+    
+    **Topik 7: Kritik Terhadap Peserta**
+    > Audiens mengkritik sikap beberapa peserta yang dianggap sombong. Terdapat kekecewaan terhadap peserta yang tidak memenuhi harapan.
+    Juga ada pertanyaan tentang kelayakan beberapa peserta untuk menang atau bertahan dalam kompetisi.   
+    > Rekomendasi: Jaga netralitas narasi dan apresiasi semua peserta secara merata.
+    
+    ---
+
+    **Topik 8: Drama & Emosi Penonton**
+    > Ada reaksi emosional terhadap peserta tertentu (seperti Kadit dan Xaviera), termasuk rasa sedih atau curiga terhadap eliminasi.   
+    > Rekomendasi: Mungkin bisa lebih transparan dalam sistem eliminasi atau memberi highlight di media sosial terhadap perjuangan peserta favorit.               
+
+    """)
