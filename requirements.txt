@@ -9,7 +9,4 @@ wordcloud
 pyldavis
 scikit-learn
 sastrawi
-io
 joblib
-re
-os
