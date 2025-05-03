@@ -1,6 +1,7 @@
 import pandas as pd
 import re
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
+import joblib
 
 # Inisialisasi Stemmer sekali saja
 factory = StemmerFactory()
@@ -45,3 +46,20 @@ def clean_text(text, alay_dict, stopwords):
     
     return ' '.join(words)
 
+# Fungsi untuk memuat model TF-IDF, PCA, dan klasifikasi
+def load_models(tfidf_path, pca_path, model_path):
+    tfidf = joblib.load(tfidf_path)
+    pca = joblib.load(pca_path)
+    model = joblib.load(model_path)
+    return tfidf, pca, model
+
+# Fungsi preprocessing lanjutan: TF-IDF + PCA
+def preprocess_features(text_series, tfidf, pca):
+    tfidf_features = tfidf.transform(text_series)
+    reduced_features = pca.transform(tfidf_features.toarray())
+    return reduced_features
+
+# Fungsi klasifikasi
+def classify_comments(features, model):
+    predictions = model.predict(features)
+    return predictions

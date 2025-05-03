@@ -1,12 +1,14 @@
 import streamlit as st
 import pandas as pd
 import os
-import pickle
+import joblib
+import sklearn
+import io
 
 from streamlit_option_menu import option_menu
 
 # untuk menggunakan fungsi yang ada di processing.py
-from utils.processing import preprocess_comments, clean_text
+from utils.processing import preprocess_comments, clean_text, preprocess_features, classify_comments
 
 # untuk menggunakan fungsi yang ada di loader.py
 from utils.loader import load_alay_dictionary, load_stopwords
@@ -156,28 +158,48 @@ elif selected == "Klasifikasi Sentimen":
 
         if st.button("🔍 Jalankan Klasifikasi"):
             with st.spinner("Sedang memproses..."):
-                # preprocessing
-                cleaned_df = preprocess_comments(df)
-                # load model
-                with open("model/sentiment_model.pkl", "rb") as f:
-                    model_pipeline = pickle.load(f)
-                # klasifikasi
-                cleaned_df["predicted_label"] = model_pipeline.predict(cleaned_df["cleaned_comment"])
+                # --- 1. Preprocessing Awal (cleaned_comment) ---
+                cleaned_df = preprocess_comments(df, alay_dict, stopwords)
+
+                BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+                # --- 2. Load Model dan Transformator ---
+                tfidf = joblib.load(os.path.join(BASE_DIR, "model", "tfidf_vectorizer.joblib"))
+                pca = joblib.load(os.path.join(BASE_DIR, "model", "pca_transformer.joblib"))
+                model = joblib.load(os.path.join(BASE_DIR, "model", "sentiment_model.joblib"))
+
+                # --- 3. Preprocessing Lanjutan (TF-IDF + PCA) ---
+                features = preprocess_features(cleaned_df["cleaned_comment"], tfidf, pca)
+
+                # --- 4. Klasifikasi ---
+                predictions = classify_comments(features, model)
+                cleaned_df["predicted_label"] = predictions
+
+                # --- 5. Mapping Label Angka ke Teks (Opsional) ---
+                label_map = {0: "Negatif", 1: "Netral", 2: "Positif"}
+                cleaned_df["label_text"] = cleaned_df["predicted_label"].map(label_map)
+
                 st.success("Klasifikasi selesai!")
-                st.dataframe(cleaned_df[["comment", "predicted_label"]])
+                st.dataframe(cleaned_df[["comment", "cleaned_comment", "label_text"]])
 
-                # tombol unduh
-                output_file = "uploads/hasil_klasifikasi.xlsx"
-                cleaned_df.to_excel(output_file, index=False)
-                with open(output_file, "rb") as f:
-                    st.download_button("⬇️ Unduh Hasil Klasifikasi", f, file_name="hasil_klasifikasi.xlsx")
-
+                # --- 6. Tombol Unduh ---
+                output_buffer = io.BytesIO()
+                cleaned_df.to_excel(output_buffer, index=False, engine='openpyxl')
+                output_buffer.seek(0)
+                
+                st.download_button(
+                    label="⬇️ Unduh Hasil Klasifikasi",
+                    data=output_buffer,
+                    file_name="hasil_klasifikasi.xlsx",
+                    mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+                )
+                
 elif selected == "Pemodelan Topik":
     # halaman pemodelan topik
     st.title("📚 Hasil Pemodelan Topik (LDA)")
     # konten
     st.subheader("👍🏼 Hasil Pemodelan Topik Komentar Positif")
-    html_path = os.path.join("data", "output_lda_pos.html")
+    html_path = os.path.join("topic_modeling", "output_lda_pos.html")
     if os.path.exists(html_path):
         with open(html_path, "r", encoding="utf-8") as f:
             html_content = f.read()
@@ -211,7 +233,7 @@ elif selected == "Pemodelan Topik":
     """)
 
     st.subheader("👎🏼 Hasil Pemodelan Topik Komentar Negatif")
-    html_path = os.path.join("data", "output_lda_neg.html")
+    html_path = os.path.join("topic_modeling", "output_lda_neg.html")
     if os.path.exists(html_path):
         with open(html_path, "r", encoding="utf-8") as f:
             html_content = f.read()
@@ -261,7 +283,7 @@ elif selected == "Pemodelan Topik":
     **Topik 7: Kritik Terhadap Peserta**
     > Audiens mengkritik sikap beberapa peserta yang dianggap sombong. Terdapat kekecewaan terhadap peserta yang tidak memenuhi harapan.
     Juga ada pertanyaan tentang kelayakan beberapa peserta untuk menang atau bertahan dalam kompetisi.   
-    > Rekomendasi: Jaga netralitas narasi dan apresiasi semua peserta secara merata.
+    > Rekomendasi: Apresiasi semua peserta secara merata.
     
     ---
 
