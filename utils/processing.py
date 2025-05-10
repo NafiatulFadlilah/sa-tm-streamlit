@@ -33,7 +33,7 @@ def clean_text(text, alay_dict, stopwords):
     text = ' '.join([alay_dict.get(word, word) for word in text.split()])
     
     # 4. Removing Repetition Character
-    text = re.sub(r'(\w)\1{2,}', r'\1', text)
+    text = re.sub(r'(.)\1{2,}', r'\1', text)
     
     # 5. Tokenizing
     words = text.split()
