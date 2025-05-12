@@ -211,15 +211,14 @@ elif selected == "Pemodelan Topik":
     
     st.markdown("""
     **Topik 1: Dukungan terhadap Program & Harapan Lanjutan**  
-    > Penonton sangat mengapresiasi acara ini karena memberikan inspirasi dan motivasi belajar, terutama kepada anak-anak Indonesia. 
-      Mereka merasa bahwa guru dan pengajaran dalam program ini menarik.  
-      Ada harapan agar acara seperti ini terus berlanjut, dan penonton menantikan episode selanjutnya.  
+    > Penonton sangat mengapresiasi acara Clash of Champions (COC) karena memberikan inspirasi dan motivasi belajar terutama kepada anak-anak Indonesia. 
+      Penonton mengapresiasi bahwa program produksi Ruangguru ini menarik. Terdapat harapan agar program seperti COC terus berlanjut dimana penonton sangat menantikan episode selanjutnya. 
       Sentimen positif juga muncul dari rasa terima kasih atas tayangan ini yang menginspirasi untuk belajar lebih giat.
 
     ---
 
     **Topik 2: Apresiasi Umum & Semangat Kompetisi**  
-    > Penonton menunjukkan apresiasi tinggi terhadap para peserta, khususnya Kadit dan tim lainnya, karena penampilan mereka yang dianggap keren, hebat, dan membanggakan. 
+    > Penonton menunjukkan apresiasi tinggi terhadap para peserta, khususnya peserta top 3 dan tim lainnya, karena penampilan mereka yang dianggap keren, hebat, dan membanggakan. 
       Ada nuansa emosional juga, seperti merinding dan sedih saat eliminasi, namun tetap memberi semangat dan dukungan. 
       Penonton merasa terinspirasi oleh semangat peserta yang tetap semangat dan terus berjuang.
                 
@@ -244,51 +243,71 @@ elif selected == "Pemodelan Topik":
     st.subheader("📝 Interpretasi Topik Negatif dan Rekomendasi Perbaikannya")
 
     st.markdown("""
-    **Topik 1: Kritik Penilaian dan Performa**
-    > Ada ketidakpuasan pada soal/penilaian, atau menganggap hasil eliminasi tidak adil.   
-    > Rekomendasi: Pastikan sistem penilaian transparan dan bisa dipahami oleh penonton umum.
+    **Topik 1: Eliminasi Peserta Potensial Terlalu Dini**
+    > Audiens tidak menerima keputusan eliminasi ketika peserta yang potensial saling melawan di babak awal. 
+      Mereka berharap pertandingan antar peserta kuat terjadi di babak final, bukan di awal kompetisi.
+                 
+    > **Rekomendasi**: Walaupun sistem pertandingan telah dirancang adil tanpa rekayasa, pertimbangan untuk menyusun bracket atau fase awal yang lebih strategis (misalnya dengan menyebar peserta kuat ke grup berbeda) dapat membantu meminimalisasi pertemuan awal antar peserta unggulan. 
+      Hal ini tetap bisa menjaga integritas pertandingan tanpa terkesan gimmick, sekaligus menjaga ketertarikan penonton hingga babak akhir. 
+      Penekanan bahwa sistem revival tersedia juga perlu diperkuat dalam komunikasi agar audiens tidak langsung kecewa terhadap eliminasi dini.
     
     ---
     
-    **Topik 2: Spoiler & Kurangnya Kepuasan**
-    > Penonton merasa terganggu dengan spoiler (mungkin dari komentar atau media sosial), konten kurang greget, atau terlalu banyak iklan.   
-    > Rekomendasi: Batasi spoiler di komentar dengan filter otomatis, dan perhatikan proporsi konten dibanding iklan.
+    **Topik 2: Keluhan terhadap Spoiler, Iklan, dan Revival**
+    > Penonton merasa terganggu dengan banyaknya spoiler, iklan, dan sistem revival yang mengurangi ketegangan dan kejutan acara. 
+      Hal ini membuat beberapa dari mereka menjadi malas menonton.  
+                 
+    > **Rekomendasi**: Sosialisasi lebih masif mengenai perbedaan jadwal tayang antara aplikasi Ruangguru dan YouTube dapat membantu mengurangi keluhan spoiler. 
+      Audiens yang tidak ingin terkena spoiler dapat diarahkan dengan sopan untuk menonton versi lebih awal di aplikasi. 
+      Untuk iklan, pendekatan integrasi yang lebih halus di dalam konten bisa menjadi alternatif. Revival sudah menjadi bagian dari desain acara, sehingga penting untuk dijelaskan secara transparan sejak awal agar tidak dianggap “plot twist” yang membingungkan.
 
     ---
 
-    **Topik 3: Keluhan terhadap Durasi & Jadwal Tayang**
-    > Penonton merasa kesal karena episode baru keluar terlalu lama, durasinya tanggung, dan menunggu terlalu lama setiap minggunya.   
-    > Rekomendasi: Pertimbangkan mempercepat jadwal rilis atau memberikan pengumuman jadwal tayang yang jelas agar ekspektasi penonton terkelola. 
+    **Topik 3: Penayangan Gantung, Durasi, dan Subtitle**
+    > Audiens mengeluhkan lamanya waktu tunggu antar episode, durasi yang singkat dan menggantung, serta tidak adanya subtitle untuk penonton non-Indonesia yang ikut menonton.  
+                
+    > **Rekomendasi**: Ending menggantung merupakan formula umum di serial kompetisi untuk menjaga ketertarikan audiens. 
+      Namun, agar tetap adil, Ruangguru bisa menambahkan pengantar atau cuplikan kecil episode berikutnya untuk memberikan sedikit konteks sebagai "penyeimbang" bagi penonton yang kurang menyukai ketegangan berlebih. 
+      Mengenai subtitle, jika permintaan semakin tinggi dari audiens internasional, penambahan subtitle Bahasa Inggris secara bertahap bisa menjadi opsi ekspansi audiens yang strategis.
     
     ---
                 
-    **Topik 4: Kekecewaan terhadap Keputusan & Peserta**
-    > Penonton kecewa pada keputusan juri atau produser, dan perasaan sayang terhadap peserta yang tidak lolos.   
-    > Rekomendasi: Berikan ruang kepada penonton untuk menyampaikan dukungan (misalnya vote atau polling), dan beri apresiasi kepada peserta yang gugur.
+    **Topik 4: Kualitas Video dan Penjelasan Soal**
+    > Penonton meminta agar penjelasan soal tidak dipotong atau dipercepat. Mereka juga mengeluhkan video yang patah-patah dan kualitas tayangan yang menurun.   
+                
+    > **Rekomendasi**: Karena soal dapat diakses melalui fitur Adapto di aplikasi resmi penyelenggara, disarankan untuk memperkuat penyampaian informasi ini di video atau caption episode agar penonton tahu bahwa pembahasan soal tidak hanya ada di tayangan. 
+      Untuk masalah kualitas video yang patah-patah, perlu evaluasi teknis dan konsistensi output produksi agar pengalaman menonton tetap nyaman, apalagi untuk penonton yang ingin belajar dari tayangan tersebut.
     
     ---
     
-    **Topik 5: Ketidakterimaan Hasil Pertandingan**
-    > Banyak yang tidak puas dengan hasil (terutama kekalahan peserta favorit), atau merasa peserta yang menang terlalu sombong.  
-    > Rekomendasi: Berikan penjelasan hasil pertandingan secara adil dan highlight sportivitas.
+    **Topik 5: Perilaku Peserta yang Dinilai Negatif**
+    > Audiens memberikan komentar negatif terhadap perilaku beberapa peserta yang dinilai sombong atau kurang sportif, serta mempertanyakan keputusan pertandingan yang tidak sesuai ekspektasi mereka.
+                  
+    > **Rekomendasi**: Karakter manusiawi peserta bisa menjadi daya tarik selama tidak melampaui batas etika. Tetap penting untuk memberi pembekalan etika sejak awal, namun biarkan dinamika personal terlihat alami karena hal tersebut justru memberikan warna dalam kompetisi. 
+      Audiens juga bisa diarahkan untuk melihat peserta sebagai individu utuh, bukan hanya berdasarkan potongan klip emosi sesaat.
 
     ---
     
-    **Topik 6: Keluhan Teknis & Alur Acara**
-    > Beberapa penonton merasa terganggu dengan teknis seperti video tidak bisa diunduh, gantung ceritanya, dan acara terasa "tidak teratur".   
-    > Rekomendasi: Perhatikan teknis penyajian (seperti kualitas video & alur cerita), dan pertimbangkan menyediakan recap atau versi ringkas.
+    **Topik 6: Kendala Teknis dan Ending Menggantung**
+    > Audiens kesulitan menonton ulang karena video tidak bisa diunduh, serta terganggu dengan video yang ngelag dan episode yang diakhiri secara tidak memuaskan (menggantung).
+                   
+    > **Rekomendasi**: Untuk aksesibilitas, dapat dipertimbangkan opsi streaming lebih ringan atau pengingat bahwa episode tersedia di aplikasi, agar penonton yang mengalami kendala jaringan bisa memilih alternatif yang sesuai. 
+      Ending menggantung, seperti dibahas di Topik 3, sebenarnya efektif menjaga ketertarikan, namun komunikasi yang transparan mengenai jadwal tayang dan teaser episode mendatang bisa membantu meredam rasa frustrasi audiens.
                 
     ---
     
-    **Topik 7: Kritik Terhadap Peserta**
-    > Audiens mengkritik sikap beberapa peserta yang dianggap sombong. Terdapat kekecewaan terhadap peserta yang tidak memenuhi harapan.
-    Juga ada pertanyaan tentang kelayakan beberapa peserta untuk menang atau bertahan dalam kompetisi.   
-    > Rekomendasi: Apresiasi semua peserta secara merata.
+    **Topik 7: Ketimpangan Performa dalam Tim**
+    > Beberapa peserta dinilai hanya menumpang di tim yang kuat. Penonton merasa ada peserta yang lebih layak untuk lanjut dibandingkan mereka yang "digendong" oleh rekan timnya.
+                  
+    > **Rekomendasi**: Meskipun tidak ada juri, transparansi sistem penilaian (misalnya, perolehan skor individual dalam tim) bisa ditampilkan secara eksplisit saat atau setelah pertandingan. 
+      Hal ini bisa menjawab keraguan penonton terhadap siapa yang berkontribusi lebih, tanpa perlu menilai secara subjektif dari interaksi visual semata.
     
     ---
 
-    **Topik 8: Drama & Emosi Penonton**
-    > Ada reaksi emosional terhadap peserta tertentu (seperti Kadit dan Xaviera), termasuk rasa sedih atau curiga terhadap eliminasi.   
-    > Rekomendasi: Mungkin bisa lebih transparan dalam sistem eliminasi atau memberi highlight di media sosial terhadap perjuangan peserta favorit.               
+    **Topik 8: Asumsi dan Drama yang Merugikan**
+    > Audiens membuat asumsi-asumsi yang tidak berdasar seperti hubungan keluarga antarpeserta dan menyebarkan drama yang bisa berdampak negatif bagi pihak yang terlibat dalam acara.
+                 
+    > **Rekomendasi**: Topik ini cenderung berasal dari persepsi atau spekulasi individu yang sulit dikontrol. 
+      Meskipun demikian, pendekatan edukatif secara halus seperti menyisipkan pengingat bahwa kompetisi murni berdasarkan hasil, tanpa intervensi eksternal, bisa membantu menjaga suasana tetap positif.             
 
     """)
