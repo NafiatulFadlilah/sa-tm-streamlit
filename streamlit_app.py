@@ -244,12 +244,12 @@ elif selected == "Pemodelan Topik":
 
     st.markdown("""
     **Topik 1: Eliminasi Peserta Potensial Terlalu Dini**
-    > Audiens tidak menerima keputusan eliminasi ketika peserta yang potensial saling melawan di babak awal. 
-      Mereka berharap pertandingan antar peserta kuat terjadi di babak final, bukan di awal kompetisi.
+    > Beberapa audiens menyatakan kekecewaan ketika dua peserta potensial harus saling berhadapan dalam elimination challenge episode 6. 
+      Mereka berharap peserta unggulan bisa bertemu di babak akhir, bukan tersingkir lebih awal, karena hal tersebut dianggap mengurangi ketegangan dan daya tarik kompetisi di episode berikutnya.
                  
-    > **Rekomendasi**: Walaupun sistem pertandingan telah dirancang adil tanpa rekayasa, pertimbangan untuk menyusun bracket atau fase awal yang lebih strategis (misalnya dengan menyebar peserta kuat ke grup berbeda) dapat membantu meminimalisasi pertemuan awal antar peserta unggulan. 
-      Hal ini tetap bisa menjaga integritas pertandingan tanpa terkesan gimmick, sekaligus menjaga ketertarikan penonton hingga babak akhir. 
-      Penekanan bahwa sistem revival tersedia juga perlu diperkuat dalam komunikasi agar audiens tidak langsung kecewa terhadap eliminasi dini.
+    > **Rekomendasi**: Sistem penentuan lawan dalam elimination challenge yang dilakukan secara sukarela dan acak melalui pengambilan bola dalam fishbowl sudah mencerminkan keadilan dan transparansi. 
+      Oleh karena itu, penting untuk memperkuat komunikasi bahwa mekanisme ini bersifat adil dan tidak direkayasa, agar audiens memahami bahwa pertemuan antar peserta kuat di awal adalah hasil dari sistem yang objektif, bukan keputusan sepihak. 
+      Selain itu, untuk menjaga ekspektasi audiens, dapat dipertimbangkan adanya penekanan sejak awal bahwa setiap peserta memiliki peluang yang sama untuk bertemu siapa pun di babak elimination, serta memperjelas bahwa acara ini tidak mengutamakan drama, tetapi murni menguji kemampuan peserta secara kompetitif. 
     
     ---
     
@@ -275,7 +275,8 @@ elif selected == "Pemodelan Topik":
     **Topik 4: Kualitas Video dan Penjelasan Soal**
     > Penonton meminta agar penjelasan soal tidak dipotong atau dipercepat. Mereka juga mengeluhkan video yang patah-patah dan kualitas tayangan yang menurun.   
                 
-    > **Rekomendasi**: Karena soal dapat diakses melalui fitur Adapto di aplikasi resmi penyelenggara, disarankan untuk memperkuat penyampaian informasi ini di video atau caption episode agar penonton tahu bahwa pembahasan soal tidak hanya ada di tayangan. 
+    > **Rekomendasi**: Karena soal dapat diakses melalui fitur Adapto di aplikasi resmi penyelenggara, maka perlu dipertimbangkan agar penjelasan cara mengerjakan soal juga tersedia di fitur tersebut dalam bentuk video. 
+      Selain itu, penjelasan soal dapat diunggah sebagai klip atau video terpisah di media sosial resmi, serta diperkuat penyampaiannya melalui tayangan episode atau caption episode, agar penonton mengetahui bahwa pembahasan soal tidak hanya tersedia di dalam tayangan. 
       Untuk masalah kualitas video yang patah-patah, perlu evaluasi teknis dan konsistensi output produksi agar pengalaman menonton tetap nyaman, apalagi untuk penonton yang ingin belajar dari tayangan tersebut.
     
     ---
@@ -296,11 +297,11 @@ elif selected == "Pemodelan Topik":
                 
     ---
     
-    **Topik 7: Ketimpangan Performa dalam Tim**
-    > Beberapa peserta dinilai hanya menumpang di tim yang kuat. Penonton merasa ada peserta yang lebih layak untuk lanjut dibandingkan mereka yang "digendong" oleh rekan timnya.
+    **Topik 7: Performa dalam Tim**
+    > Beberapa peserta dinilai hanya menumpang di tim yang kuat oleh penonton. Penonton merasa ada peserta yang lebih layak untuk lanjut dibandingkan mereka yang "digendong" oleh rekan timnya.
                   
-    > **Rekomendasi**: Meskipun tidak ada juri, transparansi sistem penilaian (misalnya, perolehan skor individual dalam tim) bisa ditampilkan secara eksplisit saat atau setelah pertandingan. 
-      Hal ini bisa menjawab keraguan penonton terhadap siapa yang berkontribusi lebih, tanpa perlu menilai secara subjektif dari interaksi visual semata.
+    > **Rekomendasi**: Transparansi sistem penilaian (misalnya, perolehan skor individual dalam tim) bisa ditampilkan secara eksplisit saat atau setelah pertandingan. Hal ini bisa menjawab keraguan penonton terhadap siapa yang berkontribusi lebih, tanpa perlu menilai secara subjektif dari interaksi visual semata. 
+      Selain itu, screen time yang diberikan untuk setiap peserta dapat dilakukan secara adil supaya semua penonton dapat melihat performa masing-masing peserta secara objektif.
     
     ---
 
