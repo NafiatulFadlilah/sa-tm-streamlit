@@ -247,68 +247,40 @@ elif selected == "Pemodelan Topik":
     > Beberapa audiens menyatakan kekecewaan ketika dua peserta potensial harus saling berhadapan dalam elimination challenge episode 6. 
       Mereka berharap peserta unggulan bisa bertemu di babak akhir, bukan tersingkir lebih awal, karena hal tersebut dianggap mengurangi ketegangan dan daya tarik kompetisi di episode berikutnya.
                  
-    > **Rekomendasi**: Sistem penentuan lawan dalam elimination challenge yang dilakukan secara sukarela dan acak melalui pengambilan bola dalam fishbowl sudah mencerminkan keadilan dan transparansi. 
-      Oleh karena itu, penting untuk memperkuat komunikasi bahwa mekanisme ini bersifat adil dan tidak direkayasa, agar audiens memahami bahwa pertemuan antar peserta kuat di awal adalah hasil dari sistem yang objektif, bukan keputusan sepihak. 
-      Selain itu, untuk menjaga ekspektasi audiens, dapat dipertimbangkan adanya penekanan sejak awal bahwa setiap peserta memiliki peluang yang sama untuk bertemu siapa pun di babak elimination, serta memperjelas bahwa acara ini tidak mengutamakan drama, tetapi murni menguji kemampuan peserta secara kompetitif. 
-    
     ---
     
     **Topik 2: Keluhan terhadap Spoiler, Iklan, dan Revival**
     > Penonton merasa terganggu dengan banyaknya spoiler, iklan, dan sistem revival yang mengurangi ketegangan dan kejutan acara. 
       Hal ini membuat beberapa dari mereka menjadi malas menonton.  
                  
-    > **Rekomendasi**: Sosialisasi lebih masif mengenai perbedaan jadwal tayang antara aplikasi Ruangguru dan YouTube dapat membantu mengurangi keluhan spoiler. 
-      Audiens yang tidak ingin terkena spoiler dapat diarahkan dengan sopan untuk menonton versi lebih awal di aplikasi. 
-      Untuk iklan, pendekatan integrasi yang lebih halus di dalam konten bisa menjadi alternatif. Revival sudah menjadi bagian dari desain acara, sehingga penting untuk dijelaskan secara transparan sejak awal agar tidak dianggap “plot twist” yang membingungkan.
-
     ---
 
     **Topik 3: Penayangan Gantung, Durasi, dan Subtitle**
     > Audiens mengeluhkan lamanya waktu tunggu antar episode, durasi yang singkat dan menggantung, serta tidak adanya subtitle untuk penonton non-Indonesia yang ikut menonton.  
                 
-    > **Rekomendasi**: Ending menggantung merupakan formula umum di serial kompetisi untuk menjaga ketertarikan audiens. 
-      Namun, agar tetap adil, Ruangguru bisa menambahkan pengantar atau cuplikan kecil episode berikutnya untuk memberikan sedikit konteks sebagai "penyeimbang" bagi penonton yang kurang menyukai ketegangan berlebih. 
-      Mengenai subtitle, jika permintaan semakin tinggi dari audiens internasional, penambahan subtitle Bahasa Inggris secara bertahap bisa menjadi opsi ekspansi audiens yang strategis.
-    
     ---
                 
     **Topik 4: Kualitas Video dan Penjelasan Soal**
     > Penonton meminta agar penjelasan soal tidak dipotong atau dipercepat. Mereka juga mengeluhkan video yang patah-patah dan kualitas tayangan yang menurun.   
                 
-    > **Rekomendasi**: Karena soal dapat diakses melalui fitur Adapto di aplikasi resmi penyelenggara, maka perlu dipertimbangkan agar penjelasan cara mengerjakan soal juga tersedia di fitur tersebut dalam bentuk video. 
-      Selain itu, penjelasan soal dapat diunggah sebagai klip atau video terpisah di media sosial resmi, serta diperkuat penyampaiannya melalui tayangan episode atau caption episode, agar penonton mengetahui bahwa pembahasan soal tidak hanya tersedia di dalam tayangan. 
-      Untuk masalah kualitas video yang patah-patah, perlu evaluasi teknis dan konsistensi output produksi agar pengalaman menonton tetap nyaman, apalagi untuk penonton yang ingin belajar dari tayangan tersebut.
-    
     ---
     
     **Topik 5: Perilaku Peserta yang Dinilai Negatif**
     > Audiens memberikan komentar negatif terhadap perilaku beberapa peserta yang dinilai sombong atau kurang sportif, serta mempertanyakan keputusan pertandingan yang tidak sesuai ekspektasi mereka.
                   
-    > **Rekomendasi**: Karakter manusiawi peserta bisa menjadi daya tarik selama tidak melampaui batas etika. Tetap penting untuk memberi pembekalan etika sejak awal, namun biarkan dinamika personal terlihat alami karena hal tersebut justru memberikan warna dalam kompetisi. 
-      Audiens juga bisa diarahkan untuk melihat peserta sebagai individu utuh, bukan hanya berdasarkan potongan klip emosi sesaat.
-
     ---
     
     **Topik 6: Kendala Teknis dan Ending Menggantung**
     > Audiens kesulitan menonton ulang karena video tidak bisa diunduh, serta terganggu dengan video yang ngelag dan episode yang diakhiri secara tidak memuaskan (menggantung).
-                   
-    > **Rekomendasi**: Untuk aksesibilitas, dapat dipertimbangkan opsi streaming lebih ringan atau pengingat bahwa episode tersedia di aplikasi, agar penonton yang mengalami kendala jaringan bisa memilih alternatif yang sesuai. 
-      Ending menggantung, seperti dibahas di Topik 3, sebenarnya efektif menjaga ketertarikan, namun komunikasi yang transparan mengenai jadwal tayang dan teaser episode mendatang bisa membantu meredam rasa frustrasi audiens.
-                
+       
     ---
     
     **Topik 7: Performa dalam Tim**
     > Beberapa peserta dinilai hanya menumpang di tim yang kuat oleh penonton. Penonton merasa ada peserta yang lebih layak untuk lanjut dibandingkan mereka yang "digendong" oleh rekan timnya.
                   
-    > **Rekomendasi**: Transparansi sistem penilaian (misalnya, perolehan skor individual dalam tim) bisa ditampilkan secara eksplisit saat atau setelah pertandingan. Hal ini bisa menjawab keraguan penonton terhadap siapa yang berkontribusi lebih, tanpa perlu menilai secara subjektif dari interaksi visual semata. 
-      Selain itu, screen time yang diberikan untuk setiap peserta dapat dilakukan secara adil supaya semua penonton dapat melihat performa masing-masing peserta secara objektif.
-    
     ---
 
     **Topik 8: Asumsi dan Drama yang Merugikan**
     > Audiens membuat asumsi-asumsi yang tidak berdasar seperti hubungan keluarga antarpeserta dan menyebarkan drama yang bisa berdampak negatif bagi pihak yang terlibat dalam acara.
                  
-    > **Rekomendasi**: Topik ini cenderung berasal dari persepsi atau spekulasi individu yang sulit dikontrol. 
-      Meskipun demikian, pendekatan edukatif secara halus seperti menyisipkan pengingat bahwa kompetisi murni berdasarkan hasil, tanpa intervensi eksternal, bisa membantu menjaga suasana tetap positif.             
-
     """)
